@@ -13,8 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'E-Learning Cave',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
-        useMaterial3: true,
+        primarySwatch: Colors.pink,
       ),
       home: const Maintab(),
       debugShowCheckedModeBanner: false,
