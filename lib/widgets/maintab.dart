@@ -18,6 +18,33 @@ class _MainTabState extends State<Maintab> {
         "E-Learning Cave",
         style: TextStyle(fontSize: 30),
       ),
+      actions: [
+        Container(
+          child: IconButton(
+            onPressed: () {
+              print("Search Button Clicked");
+            },
+            icon: Icon(Icons.search),
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+          ),
+          decoration:
+              BoxDecoration(shape: BoxShape.circle, color: Colors.pink[300]),
+        ),
+         Container(
+          margin: EdgeInsets.symmetric(horizontal: 10.0),
+          child: IconButton(
+            onPressed: () {
+              print("Menu Button Clicked");
+            },
+            icon: Icon(Icons.menu),
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+          ),
+          decoration:
+              BoxDecoration(shape: BoxShape.circle, color: Colors.pink[300]),
+        )
+      ],
     ));
   }
 }
