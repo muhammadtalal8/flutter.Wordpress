@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_api_wordpress/widgets/mydrawer.dart';
 
 class Maintab extends StatefulWidget {
   const Maintab({Key? key}) : super(key: key);
@@ -69,7 +70,9 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
+    // ignore: avoid_unnecessary_containers
+    return Container(
+      child: WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
         key: _scaffoldKey,
@@ -110,9 +113,11 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
               indicatorColor: Colors.black,
               tabs: topTabs),
         ),
-        endDrawer: Container(
-         child:  ,
-        ),
+
+endDrawer: Container(
+  child: MyDrawer(context as MyDrawer),
+),
+        
         body: TabBarView(controller: _tabController, children: const [
           Text("Latest Post"),
           Text("Popular Post"),
@@ -120,6 +125,6 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
           Text("Photos Post"),
         ]),
       ),
-    );
+    ));
   }
 }
