@@ -65,11 +65,14 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
     return _tabController?.index == 0;
   }
 
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
+        key: _scaffoldKey,
         appBar: AppBar(
           title: const Text(
             "E-Learning Cave",
@@ -78,25 +81,25 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
           actions: [
             Container(
               child: IconButton(
-                onPressed: () {
-                  print("Search Button Clicked");
-                },
                 icon: const Icon(Icons.search),
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
+                onPressed: () {
+                  print("Search Button Clicked");
+                },
               ),
               decoration: BoxDecoration(
-                  shape: BoxShape.circle, color: Colors.pink[300]),
+                  shape: BoxShape.circle, 
+                  color: Colors.pink[300]),
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10.0),
               child: IconButton(
-                onPressed: () {
-                  print("Menu Button Clicked");
-                },
+
                 icon: const Icon(Icons.menu),
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
+                onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
               ),
               decoration: BoxDecoration(
                   shape: BoxShape.circle, color: Colors.pink[300]),
@@ -106,6 +109,9 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
               controller: _tabController,
               indicatorColor: Colors.black,
               tabs: topTabs),
+        ),
+        endDrawer: Container(
+         child:  ,
         ),
         body: TabBarView(controller: _tabController, children: const [
           Text("Latest Post"),
