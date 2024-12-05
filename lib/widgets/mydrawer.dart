@@ -14,6 +14,7 @@ class _MyDrawerState extends State<MyDrawer> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
+        color: Colors.pinkAccent[200],
         child: Column(
           children: [
             Expanded(
@@ -22,7 +23,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 itemCount: 3,
                 itemBuilder: (context, i) {
                   return ListTile(
-                    title: const Text("Service"),
+                    title: const Center(child: Text("Service",style: TextStyle(fontSize: 22,color: Colors.white),)),
                     onTap: () => {
                       Navigator.push(
                           context,

@@ -1,7 +1,8 @@
-// ignore_for_file: library_private_types_in_public_api, sort_child_properties_last, avoid_print
+// ignore_for_file: library_private_types_in_public_api, sort_child_properties_last, avoid_print, avoid_unnecessary_containers, duplicate_ignore
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_api_wordpress/screens/latestpost.dart';
 import 'package:flutter_api_wordpress/widgets/mydrawer.dart';
 
 class Maintab extends StatefulWidget {
@@ -69,6 +70,7 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
+  // ignore: duplicate_ignore
   Widget build(BuildContext context) {
     // ignore: avoid_unnecessary_containers
     return Container(
@@ -119,7 +121,7 @@ endDrawer: Container(
 ),
         
         body: TabBarView(controller: _tabController, children: const [
-          Text("Latest Post"),
+LatestPost(),
           Text("Popular Post"),
           Text("Video Post"),
           Text("Photos Post"),
