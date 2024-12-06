@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_api_wordpress/screens/categorypost.dart';
 import 'package:flutter_api_wordpress/screens/latestpost.dart';
 import 'package:flutter_api_wordpress/widgets/mydrawer.dart';
 
@@ -122,7 +123,7 @@ endDrawer: Container(
         
         body: TabBarView(controller: _tabController, children: const [
 LatestPost(),
-          Text("Popular Post"),
+CategoryPost(),
           Text("Video Post"),
           Text("Photos Post"),
         ]),

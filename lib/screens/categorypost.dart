@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_api_wordpress/screens/postdetail.dart';
 
-class LatestPost extends StatefulWidget {
-  const LatestPost({super.key});
+class CategoryPost extends StatefulWidget {
+  const CategoryPost({super.key});
 
   @override
-  State<LatestPost> createState() => _LatestPostState();
+  State<CategoryPost> createState() => _CategoryPost();
 }
 
-class _LatestPostState extends State<LatestPost> {
+class _CategoryPost extends State<CategoryPost> {
   @override
   Widget build(BuildContext context) {
     return Container(
