@@ -1,9 +1,11 @@
-// ignore_for_file: library_private_types_in_public_api, sort_child_properties_last, avoid_print, avoid_unnecessary_containers, duplicate_ignore
+// ignore_for_file: library_private_types_in_public_api, sort_child_properties_last, avoid_print, avoid_unnecessary_containers, duplicate_ignore, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_api_wordpress/screens/categorypost.dart';
 import 'package:flutter_api_wordpress/screens/latestpost.dart';
+import 'package:flutter_api_wordpress/screens/photos.dart';
+import 'package:flutter_api_wordpress/screens/videos.dart';
 import 'package:flutter_api_wordpress/widgets/mydrawer.dart';
 
 class Maintab extends StatefulWidget {
@@ -75,7 +77,7 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     // ignore: avoid_unnecessary_containers
     return Container(
-      child: WillPopScope(
+        child: WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
         key: _scaffoldKey,
@@ -95,13 +97,11 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
                 },
               ),
               decoration: BoxDecoration(
-                  shape: BoxShape.circle, 
-                  color: Colors.pink[300]),
+                  shape: BoxShape.circle, color: Colors.pink[300]),
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10.0),
               child: IconButton(
-
                 icon: const Icon(Icons.menu),
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
@@ -114,19 +114,12 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
           bottom: TabBar(
               controller: _tabController,
               indicatorColor: Colors.black,
-              tabs: topTabs),
-        ),
+              tabs: topTabs)),
 
-endDrawer: Container(
-  child: MyDrawer(context as MyDrawer),
-),
-        
-        body: TabBarView(controller: _tabController, children: const [
-LatestPost(),
-CategoryPost(),
-          Text("Video Post"),
-          Text("Photos Post"),
-        ]),
+
+        body: TabBarView(
+            controller: _tabController,
+            children: const [LatestPost(), CategoryPost(), Video(), Photo()]),
       ),
     ));
   }

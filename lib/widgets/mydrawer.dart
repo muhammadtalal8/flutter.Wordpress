@@ -1,9 +1,8 @@
-// ignore_for_file: library_private_types_in_public_api, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatefulWidget {
-  const MyDrawer(MyDrawer myDrawer, {Key? key}) : super(key: key);
+  const MyDrawer(MyDrawer context,  {Key? key}) : super(key: key);
 
   @override
   _MyDrawerState createState() => _MyDrawerState();
