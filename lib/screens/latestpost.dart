@@ -24,7 +24,7 @@ class _LatestPostState extends State<LatestPost> {
                   children: [
                     Expanded(
                         child: Image.network(
-                            "https://www.bing.com/ck/a?!&&p=a6c8b6418833ba6ad3a1999287e555b13b12da3446ce0d825084e8a002d0ecebJmltdHM9MTczMzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=2456be0c-9341-6a37-1d02-ad7e929a6b9f&u=a1L2ltYWdlcy9zZWFyY2g_cT1waWN0dXJlJTIwb2YlMjBuYXR1cmUmRk9STT1JUUZSQkEmaWQ9RUUzQjRDODQ3MjgwMDdBNTNEMjlDQUQ1NzI1NENBODE3MjM2Q0YwMQ&ntb=1")),
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV8QDUyi-yK5zwkvWt-HAb_EbqJJ7dzNxwfg&s")),
                     Expanded(
                         child: Container(
                       margin: const EdgeInsets.only(bottom: 10.0, left: 10.0),
