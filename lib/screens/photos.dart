@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 class Photo extends StatelessWidget {
   const Photo({super.key});
@@ -5,7 +7,7 @@ class Photo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      child: Text("Photo",style: TextStyle(fontSize: 24),),
+      child: const Text("Photo",style: TextStyle(fontSize: 24),),
     );
   }
 }
