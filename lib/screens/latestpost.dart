@@ -27,7 +27,7 @@ class _LatestPostState extends State<LatestPost> {
               );
             }
             return ListView.builder(
-                itemCount: 5,
+                itemCount: snapshot.data?.length,
                 itemBuilder: (context, i) {
                   return Card(
                     child: ListTile(
