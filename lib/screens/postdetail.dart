@@ -1,10 +1,13 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 
 class PostDetail extends StatelessWidget {
-  const PostDetail({super.key});
+  const PostDetail({super.key, required data});
 
   @override
   Widget build(BuildContext context) {
+    var data;
     return Scaffold(
       appBar: AppBar(
         title: const Text("E-Learning Cave - Latest Post"),
@@ -15,18 +18,23 @@ class PostDetail extends StatelessWidget {
           Center(
             child: Container(
               margin: const EdgeInsets.only(bottom: 10, top: 10),
-              child: const Text(
-                "Post title",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              child: Text(
+                data['title']['rendered'],
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ),
           ),
           Image.network(
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV8QDUyi-yK5zwkvWt-HAb_EbqJJ7dzNxwfg&s"),
+             data["_embedded"]["wp:featuremedia"][0]
+                                  ["source_url"]),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: const Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ",
+            child: Text(
+              data['title']['rendered']
+                  .toString()
+                  .replaceAll("<p>", "")
+                  .replaceAll("/p", ""),
               style: TextStyle(fontSize: 20.0),
             ),
           )

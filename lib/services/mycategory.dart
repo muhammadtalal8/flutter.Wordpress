@@ -3,12 +3,15 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class Post {
-  String baseUrl = "https://elearning.com/wp-json/wp/v2/posts?_embed";
+class MyCategory {
+  String baseUrl = "https://elearning.com/wp-json/wp/v2/posts?_embed&categories=2";
 
-  getAllPost() {}}
+  getAllPost() {}
 
-Future<List> getAllPOst() async {
+  getCategoryPost() {}
+}
+
+Future<List> getCategoryPost() async {
   try {
     var response = await http.get(Uri.parse(base64Url as String));
     print(response);
