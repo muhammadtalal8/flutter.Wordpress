@@ -8,7 +8,7 @@ import 'package:flutter_api_wordpress/services/post.dart';
 class CategoryPost extends StatefulWidget {
   final data;
 
-  const CategoryPost({super.key,required this.data});
+   CategoryPost({super.key,required this.data});
 
   @override
   State<CategoryPost> createState() => _CategoryPostState();
@@ -19,13 +19,13 @@ class _CategoryPostState extends State<CategoryPost> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 8.0),
+      margin:  EdgeInsets.only(top: 8.0),
       child: FutureBuilder<List>(
         future: categoryPostService.getCategoryPost(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data?.length == 0) {
-              return const Center(
+              return  Center(
                 child: Text("0 Post"),
               );
             }
@@ -43,17 +43,17 @@ class _CategoryPostState extends State<CategoryPost> {
                           Expanded(
                               child: Container(
                             margin:
-                                const EdgeInsets.only(bottom: 10.0, left: 10.0),
+                                 EdgeInsets.only(bottom: 10.0, left: 10.0),
                             child: Text(
                               snapshot.data?[i]["rendered"],
-                              style: const TextStyle(
+                              style:  TextStyle(
                                   fontSize: 24, fontWeight: FontWeight.bold),
                             ),
                           ))
                         ],
                       ),
                       subtitle: Container(
-                        margin: const EdgeInsets.only(bottom: 10.0),
+                        margin:  EdgeInsets.only(bottom: 10.0),
                         child: Text(
                           snapshot.data![i]["content"]["rendered"]
                               .toString()
@@ -61,7 +61,7 @@ class _CategoryPostState extends State<CategoryPost> {
                               .replaceAll("/p", ""),
                           maxLines: 4,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(fontSize: 20.0),
+                          style:  TextStyle(fontSize: 20.0),
                         ),
                       ),
                       onTap: () {
@@ -79,7 +79,7 @@ class _CategoryPostState extends State<CategoryPost> {
               child: Text(snapshot.error.toString()),
             );
           } else {
-            return const Center(
+            return  Center(
               child: CircularProgressIndicator(),
             );
           }
