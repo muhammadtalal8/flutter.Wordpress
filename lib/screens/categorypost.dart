@@ -1,14 +1,15 @@
-// ignore_for_file: prefer_is_empty, prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_is_empty, prefer_typing_uninitialized_variables, unused_import, duplicate_ignore
 
 import 'package:flutter/material.dart';
 import 'package:flutter_api_wordpress/screens/postdetail.dart';
 import 'package:flutter_api_wordpress/services/mycategory.dart';
+// ignore: unused_import
 import 'package:flutter_api_wordpress/services/post.dart';
 
 class CategoryPost extends StatefulWidget {
   final data;
 
-   CategoryPost({super.key,required this.data});
+   const CategoryPost({super.key,required this.data});
 
   @override
   State<CategoryPost> createState() => _CategoryPostState();
@@ -19,13 +20,13 @@ class _CategoryPostState extends State<CategoryPost> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:  EdgeInsets.only(top: 8.0),
+      margin:  const EdgeInsets.only(top: 8.0),
       child: FutureBuilder<List>(
         future: categoryPostService.getCategoryPost(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data?.length == 0) {
-              return  Center(
+              return  const Center(
                 child: Text("0 Post"),
               );
             }
@@ -43,17 +44,17 @@ class _CategoryPostState extends State<CategoryPost> {
                           Expanded(
                               child: Container(
                             margin:
-                                 EdgeInsets.only(bottom: 10.0, left: 10.0),
+                                 const EdgeInsets.only(bottom: 10.0, left: 10.0),
                             child: Text(
                               snapshot.data?[i]["rendered"],
-                              style:  TextStyle(
+                              style:  const TextStyle(
                                   fontSize: 24, fontWeight: FontWeight.bold),
                             ),
                           ))
                         ],
                       ),
                       subtitle: Container(
-                        margin:  EdgeInsets.only(bottom: 10.0),
+                        margin:  const EdgeInsets.only(bottom: 10.0),
                         child: Text(
                           snapshot.data![i]["content"]["rendered"]
                               .toString()
@@ -61,7 +62,7 @@ class _CategoryPostState extends State<CategoryPost> {
                               .replaceAll("/p", ""),
                           maxLines: 4,
                           overflow: TextOverflow.ellipsis,
-                          style:  TextStyle(fontSize: 20.0),
+                          style:  const TextStyle(fontSize: 20.0),
                         ),
                       ),
                       onTap: () {
@@ -79,7 +80,7 @@ class _CategoryPostState extends State<CategoryPost> {
               child: Text(snapshot.error.toString()),
             );
           } else {
-            return  Center(
+            return  const Center(
               child: CircularProgressIndicator(),
             );
           }

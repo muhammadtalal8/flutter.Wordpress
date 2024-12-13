@@ -35,7 +35,7 @@ class PostDetail extends StatelessWidget {
                   .toString()
                   .replaceAll("<p>", "")
                   .replaceAll("/p", ""),
-              style: TextStyle(fontSize: 20.0),
+              style: const TextStyle(fontSize: 20.0),
             ),
           )
         ],

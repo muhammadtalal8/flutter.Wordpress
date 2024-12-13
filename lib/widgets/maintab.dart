@@ -119,7 +119,7 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
 
         body: TabBarView(
             controller: _tabController,
-            children:  [LatestPost(data: null,), CategoryPost(data: null,), Video(), Photo()]),
+            children:  const [LatestPost(data: null,), CategoryPost(data: null,), Video(), Photo()]),
       ),
     ));
   }

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, avoid_unnecessary_containers, prefer_is_empty
+
 import 'package:flutter/material.dart';
 import 'package:flutter_api_wordpress/screens/pagedetail.dart';
 import 'package:flutter_api_wordpress/services/page.dart';
@@ -36,7 +38,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         title:  Center(
                           child: Text(
                             snapshot.data![i]["title"]["rendered"],
-                            style: TextStyle(fontSize: 22, color: Colors.white),
+                            style: const TextStyle(fontSize: 22, color: Colors.white),
                           ),
                         ),
                         onTap: () => {
