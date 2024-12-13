@@ -1,16 +1,15 @@
-
-// ignore_for_file: library_private_types_in_public_api, avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
+import 'package:flutter_api_wordpress/services/page.dart';
 
 class MyDrawer extends StatefulWidget {
-  const MyDrawer(MyDrawer context,  {Key? key}) : super(key: key);
+  const MyDrawer(MyDrawer context, {Key? key}) : super(key: key);
 
   @override
   _MyDrawerState createState() => _MyDrawerState();
 }
 
 class _MyDrawerState extends State<MyDrawer> {
+  MyPage pageService = MyPage();
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -20,21 +19,34 @@ class _MyDrawerState extends State<MyDrawer> {
           children: [
             Expanded(
                 child: Container(
-              child: ListView.builder(
-                itemCount: 3,
-                itemBuilder: (context, i) {
-                  return ListTile(
-                    title: const Center(child: Text("Service",style: TextStyle(fontSize: 22,color: Colors.white),)),
-                    onTap: () => {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Text("Service")))
-                    },
-                  );
-                },
-              ),
-            ))
+
+
+              child: 
+              
+              
+        future: postService.getAllPost(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            if (snapshot.data?.length == 0) {
+              return const Center(
+                child: Text("0 Post"),
+
+              );
+            }
+            return 
+            } else if (snapshot.hasError) {
+            return Center(
+              child: Text(snapshot.error.toString()),
+            );
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
+      ),
+
+            )
           ],
         ),
       ),
