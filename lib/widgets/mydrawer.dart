@@ -5,7 +5,7 @@ import 'package:flutter_api_wordpress/screens/pagedetail.dart';
 import 'package:flutter_api_wordpress/services/page.dart';
 
 class MyDrawer extends StatefulWidget {
-  const MyDrawer(MyDrawer context, {Key? key}) : super(key: key);
+   MyDrawer(MyDrawer context, {Key? key}) : super(key: key);
 
   @override
   _MyDrawerState createState() => _MyDrawerState();
@@ -27,7 +27,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     if (snapshot.data?.length == 0) {
-                      return const Center(
+                      return  Center(
                         child: Text("No page"),
                       );
                     }
@@ -38,7 +38,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         title:  Center(
                           child: Text(
                             snapshot.data![i]["title"]["rendered"],
-                            style: const TextStyle(fontSize: 22, color: Colors.white),
+                            style:  TextStyle(fontSize: 22, color: Colors.white),
                           ),
                         ),
                         onTap: () => {
@@ -54,7 +54,7 @@ class _MyDrawerState extends State<MyDrawer> {
                       child: Text(snapshot.error.toString()),
                     );
                   } else {
-                    return const Center(
+                    return  Center(
                       child: CircularProgressIndicator(),
                     );
                   }
