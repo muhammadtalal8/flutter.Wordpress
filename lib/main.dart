@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_api_wordpress/widgets/maintab.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: const Maintab(),
+      home:  Maintab(),
       debugShowCheckedModeBanner: false,
     );
   }

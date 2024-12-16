@@ -9,7 +9,7 @@ import 'package:flutter_api_wordpress/screens/videos.dart';
 import 'package:flutter_api_wordpress/widgets/mydrawer.dart';
 
 class Maintab extends StatefulWidget {
-  const Maintab({Key? key}) : super(key: key);
+   Maintab({Key? key}) : super(key: key);
 
   @override
   _MainTabState createState() => _MainTabState();
@@ -18,25 +18,25 @@ class Maintab extends StatefulWidget {
 class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
   TabController? _tabController;
   final List<Tab> topTabs = <Tab>[
-    const Tab(
+     Tab(
       child: Text(
         "LATEST",
         style: TextStyle(fontSize: 10),
       ),
     ),
-    const Tab(
+     Tab(
       child: Text(
         "POPULAR",
         style: TextStyle(fontSize: 10),
       ),
     ),
-    const Tab(
+     Tab(
       child: Text(
         "VIDEOS",
         style: TextStyle(fontSize: 10),
       ),
     ),
-    const Tab(
+     Tab(
       child: Text(
         "PHOTOS",
         style: TextStyle(fontSize: 10),
@@ -61,7 +61,7 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
       await SystemNavigator.pop();
     }
 
-    Future.delayed(const Duration(microseconds: 200), () {
+    Future.delayed( Duration(microseconds: 200), () {
       print("Set Index");
       _tabController?.index = 0;
     });
@@ -82,14 +82,14 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
       child: Scaffold(
         key: _scaffoldKey,
         appBar: AppBar(
-          title: const Text(
+          title:  Text(
             "E-Learning Cave",
             style: TextStyle(fontSize: 20),
           ),
           actions: [
             Container(
               child: IconButton(
-                icon: const Icon(Icons.search),
+                icon:  Icon(Icons.search),
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onPressed: () {
@@ -100,9 +100,9 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
                   shape: BoxShape.circle, color: Colors.pink[300]),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10.0),
+              margin:  EdgeInsets.symmetric(horizontal: 10.0),
               child: IconButton(
-                icon: const Icon(Icons.menu),
+                icon:  Icon(Icons.menu),
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
@@ -119,7 +119,7 @@ class _MainTabState extends State<Maintab> with SingleTickerProviderStateMixin {
 
         body: TabBarView(
             controller: _tabController,
-            children:  const [LatestPost(data: null,), CategoryPost(data: null,), Video(), Photo()]),
+            children:   [LatestPost(data: null,), CategoryPost(data: null,), Video(), Photo()]),
       ),
     ));
   }
