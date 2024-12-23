@@ -1,9 +1,7 @@
-// ignore_for_file: prefer_is_empty, prefer_typing_uninitialized_variables, unused_import, duplicate_ignore
 
 import 'package:flutter/material.dart';
 import 'package:flutter_api_wordpress/screens/postdetail.dart';
 import 'package:flutter_api_wordpress/services/mycategory.dart';
-// ignore: unused_import
 import 'package:flutter_api_wordpress/services/post.dart';
 
 class CategoryPost extends StatefulWidget {
