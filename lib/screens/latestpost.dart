@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_is_empty, prefer_typing_uninitialized_variables
-
 import 'package:flutter/material.dart';
 import 'package:flutter_api_wordpress/screens/postdetail.dart';
 import 'package:flutter_api_wordpress/services/post.dart';
